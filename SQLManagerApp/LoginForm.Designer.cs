@@ -76,6 +76,7 @@
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.Size = new System.Drawing.Size(194, 20);
             this.tbPassword.TabIndex = 5;
+            this.tbPassword.UseSystemPasswordChar = true;
             // 
             // label3
             // 
@@ -122,6 +123,7 @@
             this.Controls.Add(this.tbServer);
             this.Controls.Add(this.label1);
             this.Name = "LoginForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginForm";
             this.ResumeLayout(false);
             this.PerformLayout();

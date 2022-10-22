@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLManagerApp.Dal;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,8 +20,22 @@ namespace SQLManagerApp
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            new MainForm().Show();
-            Hide();
+            try
+            {
+                SqlRepository.Login(
+                       tbServer.Text.Trim(),
+                       tbUsername.Text.Trim(),
+                       tbPassword.Text.Trim()
+                       );
+                txtError.Visible = false;
+                new MainForm().Show();
+                Hide();
+            }
+            catch (Exception ex)
+            {
+                txtError.Visible = true;
+                txtError.Text = ex.Message;
+            }
         }
     }
 }

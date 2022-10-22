@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SQLManagerApp.Dal;
+using SQLManagerApp.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +21,7 @@ namespace SQLManagerApp
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-
+            cbDatabases.DataSource = new List<Database>(SqlRepository.GetDatabases());
         }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e) => Application.Exit();
