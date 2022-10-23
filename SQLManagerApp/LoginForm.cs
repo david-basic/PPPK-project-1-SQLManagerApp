@@ -22,7 +22,7 @@ namespace SQLManagerApp
         {
             try
             {
-                SqlRepository.Login(
+                RepositoryFactory.GetRepository().Login(
                        tbServer.Text.Trim(),
                        tbUsername.Text.Trim(),
                        tbPassword.Text.Trim()
