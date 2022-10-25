@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -57,6 +58,29 @@ namespace SQLManagerApp
             lbViewColumns.DataSource = null;
             lbProcedureParams.DataSource = null;
             tbProcedureDefinition.Text = string.Empty;
+        }
+
+        private void BtnXML_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnSELECT_Click(object sender, EventArgs e)
+        {
+            DBEntity dBEntity;
+            switch ((sender as Button).Name)
+            {
+                case nameof(btnSelectTables):
+                    dBEntity = lbTables.SelectedItem as DBEntity;
+                    break;
+                case nameof(btnSelectViews):
+                    dBEntity = lbViews.SelectedItem as DBEntity;
+                    break;
+                default:
+                    throw new Exception("Error!");
+            }
+            DataSet ds = RepositoryFactory.GetRepository().CreateDataSet(dBEntity);
+            new SelectForm(ds.Tables[0]).ShowDialog();
         }
     }
 }

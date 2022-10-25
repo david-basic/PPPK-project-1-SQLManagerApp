@@ -45,8 +45,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.tbProcedureDefinition = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnSelectTables = new System.Windows.Forms.Button();
+            this.btnSelectViews = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -199,24 +199,27 @@
             this.button1.TabIndex = 19;
             this.button1.Text = "XML";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.BtnXML_Click);
             // 
-            // button2
+            // btnSelectTables
             // 
-            this.button2.Location = new System.Drawing.Point(236, 230);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(85, 38);
-            this.button2.TabIndex = 20;
-            this.button2.Text = "SELECT";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnSelectTables.Location = new System.Drawing.Point(236, 230);
+            this.btnSelectTables.Name = "btnSelectTables";
+            this.btnSelectTables.Size = new System.Drawing.Size(85, 38);
+            this.btnSelectTables.TabIndex = 20;
+            this.btnSelectTables.Text = "SELECT";
+            this.btnSelectTables.UseVisualStyleBackColor = true;
+            this.btnSelectTables.Click += new System.EventHandler(this.BtnSELECT_Click);
             // 
-            // button3
+            // btnSelectViews
             // 
-            this.button3.Location = new System.Drawing.Point(762, 230);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(85, 38);
-            this.button3.TabIndex = 22;
-            this.button3.Text = "SELECT";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnSelectViews.Location = new System.Drawing.Point(762, 230);
+            this.btnSelectViews.Name = "btnSelectViews";
+            this.btnSelectViews.Size = new System.Drawing.Size(85, 38);
+            this.btnSelectViews.TabIndex = 22;
+            this.btnSelectViews.Text = "SELECT";
+            this.btnSelectViews.UseVisualStyleBackColor = true;
+            this.btnSelectViews.Click += new System.EventHandler(this.BtnSELECT_Click);
             // 
             // button4
             // 
@@ -226,6 +229,7 @@
             this.button4.TabIndex = 21;
             this.button4.Text = "XML";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.BtnXML_Click);
             // 
             // MainForm
             // 
@@ -233,9 +237,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1081, 682);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnSelectViews);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnSelectTables);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.tbProcedureDefinition);
             this.Controls.Add(this.lbProcedureParams);
@@ -281,8 +285,8 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox tbProcedureDefinition;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnSelectTables;
+        private System.Windows.Forms.Button btnSelectViews;
         private System.Windows.Forms.Button button4;
     }
 }

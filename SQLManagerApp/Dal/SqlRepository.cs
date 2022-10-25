@@ -151,5 +151,21 @@ namespace SQLManagerApp.Dal
                 }
             }
         }
+
+        public DataSet CreateDataSet(DBEntity dBEntity)
+        {
+            using (SqlConnection con = new SqlConnection(cs))
+            {
+                // data adapter binda ataset u memoriji sa selekcijom koja se dovuce iz baze
+                SqlDataAdapter da = new SqlDataAdapter(
+                        string.Format(SelectQuery, dBEntity.Database, dBEntity.Schema, dBEntity.Name),
+                        con
+                    );
+                DataSet ds = new DataSet(dBEntity.Name);
+                da.Fill(ds);
+                ds.Tables[0].TableName = dBEntity.Name; // samo postavlja ime tablici
+                return ds;
+            }
+        }
     }
 }
