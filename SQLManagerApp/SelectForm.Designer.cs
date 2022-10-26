@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DgResults = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.DgResults)).BeginInit();
             this.SuspendLayout();
             // 
             // DgResults
             // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
+            this.DgResults.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DgResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgResults.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgResults.Location = new System.Drawing.Point(0, 0);

@@ -15,6 +15,9 @@ namespace SQLManagerApp
 {
     public partial class MainForm : Form
     {
+        private const string FileFilter = "XML files(*.xml)|*.xml|All files(*.*)|*.*";
+        private const string FileName = "{0}.xml";
+
         public MainForm()
         {
             InitializeComponent();
@@ -62,6 +65,29 @@ namespace SQLManagerApp
 
         private void BtnXML_Click(object sender, EventArgs e)
         {
+            DBEntity dBEntity;
+            switch ((sender as Button).Name)
+            {
+                case nameof(BtnXMLTables):
+                    dBEntity = lbTables.SelectedItem as DBEntity;
+                    break;
+                case nameof(BtnXMLViews):
+                    dBEntity = lbViews.SelectedItem as DBEntity;
+                    break;
+                default:
+                    throw new Exception("Error!");
+            }
+            var dialog = new SaveFileDialog()
+            {
+                FileName = string.Format(FileName, dBEntity.Name),
+                Filter = FileFilter
+            };
+
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                DataSet ds = RepositoryFactory.GetRepository().CreateDataSet(dBEntity);
+                ds.WriteXml(dialog.FileName, XmlWriteMode.WriteSchema);
+            }
 
         }
 
@@ -81,6 +107,11 @@ namespace SQLManagerApp
             }
             DataSet ds = RepositoryFactory.GetRepository().CreateDataSet(dBEntity);
             new SelectForm(ds.Tables[0]).ShowDialog();
+        }
+
+        private void BtnOpenQueryForm_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
