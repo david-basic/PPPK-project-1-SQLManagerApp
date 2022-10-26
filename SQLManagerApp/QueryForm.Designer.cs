@@ -28,20 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tbQueryInput = new System.Windows.Forms.TextBox();
             this.btnRunQuery = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabQueryResultsAndMessages = new System.Windows.Forms.TabControl();
             this.tabPageResults = new System.Windows.Forms.TabPage();
-            this.tbResults = new System.Windows.Forms.TextBox();
             this.tabPageMessages = new System.Windows.Forms.TabPage();
             this.tbMessages = new System.Windows.Forms.TextBox();
             this.lblDB = new System.Windows.Forms.Label();
             this.cbQueryDatabases = new System.Windows.Forms.ComboBox();
+            this.dgResults = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.tabQueryResultsAndMessages.SuspendLayout();
             this.tabPageResults.SuspendLayout();
             this.tabPageMessages.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgResults)).BeginInit();
             this.SuspendLayout();
             // 
             // tbQueryInput
@@ -84,7 +86,7 @@
             // 
             // tabPageResults
             // 
-            this.tabPageResults.Controls.Add(this.tbResults);
+            this.tabPageResults.Controls.Add(this.dgResults);
             this.tabPageResults.Location = new System.Drawing.Point(4, 22);
             this.tabPageResults.Name = "tabPageResults";
             this.tabPageResults.Padding = new System.Windows.Forms.Padding(3);
@@ -92,17 +94,6 @@
             this.tabPageResults.TabIndex = 0;
             this.tabPageResults.Text = "Results";
             this.tabPageResults.UseVisualStyleBackColor = true;
-            // 
-            // tbResults
-            // 
-            this.tbResults.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbResults.Location = new System.Drawing.Point(3, 3);
-            this.tbResults.Multiline = true;
-            this.tbResults.Name = "tbResults";
-            this.tbResults.ReadOnly = true;
-            this.tbResults.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbResults.Size = new System.Drawing.Size(1148, 213);
-            this.tbResults.TabIndex = 0;
             // 
             // tabPageMessages
             // 
@@ -143,6 +134,18 @@
             this.cbQueryDatabases.Size = new System.Drawing.Size(173, 21);
             this.cbQueryDatabases.TabIndex = 4;
             // 
+            // dgResults
+            // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
+            this.dgResults.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgResults.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgResults.Location = new System.Drawing.Point(3, 3);
+            this.dgResults.Name = "dgResults";
+            this.dgResults.ReadOnly = true;
+            this.dgResults.Size = new System.Drawing.Size(1148, 213);
+            this.dgResults.TabIndex = 0;
+            // 
             // QueryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -159,9 +162,9 @@
             this.panel1.ResumeLayout(false);
             this.tabQueryResultsAndMessages.ResumeLayout(false);
             this.tabPageResults.ResumeLayout(false);
-            this.tabPageResults.PerformLayout();
             this.tabPageMessages.ResumeLayout(false);
             this.tabPageMessages.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgResults)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -174,10 +177,10 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TabControl tabQueryResultsAndMessages;
         private System.Windows.Forms.TabPage tabPageResults;
-        private System.Windows.Forms.TextBox tbResults;
         private System.Windows.Forms.TabPage tabPageMessages;
         private System.Windows.Forms.TextBox tbMessages;
         private System.Windows.Forms.Label lblDB;
         private System.Windows.Forms.ComboBox cbQueryDatabases;
+        private System.Windows.Forms.DataGridView dgResults;
     }
 }

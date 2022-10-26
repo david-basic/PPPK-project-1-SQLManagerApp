@@ -167,5 +167,19 @@ namespace SQLManagerApp.Dal
                 return ds;
             }
         }
+
+        public DataSet CreateQueryDataSet(string query)
+        {
+            using (SqlConnection con = new SqlConnection(cs))
+            {
+                SqlDataAdapter da = new SqlDataAdapter(
+                        query,
+                        con
+                    );
+                DataSet ds = new DataSet("NewDataSet");
+                da.Fill(ds);
+                return ds;
+            }
+        }
     }
 }

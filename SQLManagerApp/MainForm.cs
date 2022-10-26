@@ -35,8 +35,8 @@ namespace SQLManagerApp
             ClearForm();
 
             lbTables.DataSource = (cbDatabases.SelectedItem as Database).Tables;
-            lbViews .DataSource = (cbDatabases.SelectedItem as Database).Views;
-            lbProcedures .DataSource = (cbDatabases.SelectedItem as Database).Procedures;
+            lbViews.DataSource = (cbDatabases.SelectedItem as Database).Views;
+            lbProcedures.DataSource = (cbDatabases.SelectedItem as Database).Procedures;
         }
 
         private void LbTables_SelectedIndexChanged(object sender, EventArgs e)
@@ -111,7 +111,7 @@ namespace SQLManagerApp
 
         private void BtnOpenQueryForm_Click(object sender, EventArgs e)
         {
-            new QueryForm().ShowDialog();   
+            new QueryForm().ShowDialog();
         }
     }
 }
