@@ -111,7 +111,7 @@ namespace SQLManagerApp
 
         private void BtnOpenQueryForm_Click(object sender, EventArgs e)
         {
-
+            new QueryForm().ShowDialog();   
         }
     }
 }

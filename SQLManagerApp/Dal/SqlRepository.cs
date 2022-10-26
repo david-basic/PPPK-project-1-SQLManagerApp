@@ -156,7 +156,7 @@ namespace SQLManagerApp.Dal
         {
             using (SqlConnection con = new SqlConnection(cs))
             {
-                // data adapter binda ataset u memoriji sa selekcijom koja se dovuce iz baze
+                // data adapter binda dataset u memoriji sa selekcijom koja se dovuce iz baze
                 SqlDataAdapter da = new SqlDataAdapter(
                         string.Format(SelectQuery, dBEntity.Database, dBEntity.Schema, dBEntity.Name),
                         con
