@@ -30,22 +30,22 @@ namespace SQLManagerApp
         private void btnRunQuery_Click(object sender, EventArgs e)
         {
             ClearTabs();
-            DBEntity dBEntity = (cbQueryDatabases.SelectedItem as DBEntity);
-            IList<DBEntity> tables = (cbQueryDatabases.SelectedItem as DBEntity).Database.Tables;
+            //DBEntity dBEntity = (cbQueryDatabases.SelectedItem as DBEntity);
+            //IList<DBEntity> tables = (cbQueryDatabases.SelectedItem as DBEntity).Database.Tables;
 
-            foreach (var t in tables)
-            {
-                if (t.ToString() == "Kupac")
-                {
-                    Console.WriteLine(t.ToString());
-                }
-            }
+            //foreach (var t in tables)
+            //{
+            //    if (t.ToString() == "Kupac")
+            //    {
+            //        Console.WriteLine(t.ToString());
+            //    }
+            //}
 
             string rawQuery = tbQueryInput.Text;
 
             try
             {
-                DataSet ds = RepositoryFactory.GetRepository().CreateQueryDataSet(rawQuery);
+                DataSet ds = RepositoryFactory.GetRepository().CreateQueryDataSet(rawQuery, cbQueryDatabases.SelectedItem as Database);
                 DataTable dt = ds.Tables[0];
                 if (dt.HasErrors)
                 {

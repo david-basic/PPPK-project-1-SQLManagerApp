@@ -168,10 +168,12 @@ namespace SQLManagerApp.Dal
             }
         }
 
-        public DataSet CreateQueryDataSet(string query)
+        public DataSet CreateQueryDataSet(string query, Database dataBase)
         {
             using (SqlConnection con = new SqlConnection(cs))
             {
+                con.Open();
+                con.ChangeDatabase(dataBase.ToString());
                 SqlDataAdapter da = new SqlDataAdapter(
                         query,
                         con

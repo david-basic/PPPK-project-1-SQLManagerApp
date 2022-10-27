@@ -13,6 +13,6 @@ namespace SQLManagerApp.Dal
         IEnumerable<Procedure> GetProcedures(Database database);
         DataSet CreateDataSet(DBEntity dBEntity);
         void Login(string server, string username, string password);
-        DataSet CreateQueryDataSet(string query);
+        DataSet CreateQueryDataSet(string query, Database database);
     }
 }
